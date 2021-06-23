@@ -1,18 +1,13 @@
-import React, { useState } from 'react';
-import { Image, View, Text, StatusBar } from 'react-native';
+import React from 'react';
+import { Image, View, Text } from 'react-native';
 
 import IllustratedImg from '../../assets/illustration.png';
+import { ButtonIcon } from '../../components/ButtonIcon';
 import { styles } from './styles';
 
 export function SignIn() {
   return (
     <View style={ styles.container }>
-      <StatusBar
-        barStyle='light-content'
-        backgroundColor='transparent'
-        translucent
-      />
-
       <Image
         source={ IllustratedImg }
         style={ styles.image }
@@ -30,6 +25,11 @@ export function SignIn() {
           Crie grupos para jogar seus games{ `\n` }
           favoritos com seus amigos{ `\n` }
         </Text>
+
+        <ButtonIcon
+          title='Entrar com Discord'
+          activeOpacity={ .8 }
+        />
       </View>
     </View>
   );
