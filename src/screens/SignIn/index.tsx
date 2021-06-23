@@ -15,7 +15,7 @@ export function SignIn() {
         style={ styles.input }
         onChangeText={ setText }
       />
-
+      {/* 1:10 */}
       <Text>
         Você digitou: { text }
       </Text>
