@@ -1,24 +1,36 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput } from 'react-native';
+import { Image, View, Text, StatusBar } from 'react-native';
 
+import IllustratedImg from '../../assets/illustration.png';
 import { styles } from './styles';
 
 export function SignIn() {
-
-  const [ text, setText ] = useState('');
-
   return (
     <View style={ styles.container }>
-      <Text>Open up App.tsx to start working on your app!</Text>
-
-      <TextInput
-        style={ styles.input }
-        onChangeText={ setText }
+      <StatusBar
+        barStyle='light-content'
+        backgroundColor='transparent'
+        translucent
       />
-      {/* 1:10 */}
-      <Text>
-        Você digitou: { text }
-      </Text>
+
+      <Image
+        source={ IllustratedImg }
+        style={ styles.image }
+        resizeMode='stretch'
+      />
+
+      <View style={ styles.content }>
+        <Text style={ styles.title }>
+          Organize{ `\n` }
+          suas jogatinas{ `\n` }
+          facilmente
+        </Text>
+
+        <Text style={ styles.subtitle }>
+          Crie grupos para jogar seus games{ `\n` }
+          favoritos com seus amigos{ `\n` }
+        </Text>
+      </View>
     </View>
   );
 }
