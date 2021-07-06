@@ -20,7 +20,7 @@ export function CategorySelect({
       horizontal
       showsHorizontalScrollIndicator={ false }
       contentContainerStyle={ { paddingRight: 40 } }
-    >
+    > 
       {
         categories.map(category => (
           <Category
