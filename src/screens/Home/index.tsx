@@ -9,8 +9,10 @@ import { Background } from '../../components/Background';
 import { styles } from './styles';
 import { Appointment } from '../../components/Appointment';
 import { ListDivider } from '../../components/ListDivider';
+import { useNavigation } from '@react-navigation/native';
 
 export function Home() {
+  const navigation = useNavigation();
 
   const [ category, setCategory ] = useState('');
 
@@ -40,6 +42,10 @@ export function Home() {
       description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
     }
   ]
+
+  function handleAppointmentDetails() {
+    navigation.navigate('AppointmentDetails');
+  }
 
   function handleCategorySelect(categoryId: string) {
     categoryId === category ? setCategory('') : setCategory(categoryId); // se estiver selecionado, desmarcará
@@ -71,6 +77,7 @@ export function Home() {
           renderItem={ ({ item }) => (
             <Appointment
               data={ item }
+              onPress={ handleAppointmentDetails }
             />
           ) }
           ItemSeparatorComponent={ () => <ListDivider /> }
