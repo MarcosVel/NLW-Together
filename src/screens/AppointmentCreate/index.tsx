@@ -8,6 +8,7 @@ import { Header } from '../../components/Header';
 
 import { theme } from '../../global/styles/theme';
 import { styles } from './styles';
+import { GuildIcon } from '../../components/GuildIcon';
 
 export function AppointmentCreate() {
 
@@ -19,7 +20,7 @@ export function AppointmentCreate() {
         title='Agendar partida'
       />
 
-      <Text style={ styles.label }>Categoria</Text>
+      <Text style={ [ styles.label, { marginLeft: 24, marginTop: 36, marginBottom: 18 } ] }>Categoria</Text>
 
       <CategorySelect
         hasCheckBox
@@ -31,7 +32,10 @@ export function AppointmentCreate() {
         <RectButton>
           <View style={ styles.select }>
 
-            <View style={ styles.image } />
+            {
+              // <View style={ styles.image } />
+              <GuildIcon />
+            }
 
             <View style={ styles.selectBody }>
               <Text style={ styles.label }>
